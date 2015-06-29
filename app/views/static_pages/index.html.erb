@@ -1,1 +1,10 @@
-HOME PAGEEEE
+<h1>Easy Wiki</h1>
+
+<section class="featured-tags">
+  <strong>Most used tags:</strong>
+  <br />
+  <!--Do comma delimited featured tag list here @TODO: make tags linkable -->
+  <% @tags.each_with_index do |tag, i| %>
+    <%= tag.name %><% if i != @tags.length - 1 %>, <% end %>
+  <% end %>
+</section>

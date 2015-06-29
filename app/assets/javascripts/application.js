@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require pen/pen
+//= require pen/markdown
 //= require_tree .

@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @posts = Post.find(params[:id])
+    @post = Post.find(params[:id])
   end
 
   def create
@@ -39,5 +39,11 @@ class PostsController < ApplicationController
 
   def destroy
     #TODO
+  end
+  
+  private
+  
+  def post_params
+    params.require(:post).permit(:title, :body, :user_id)
   end
 end

@@ -15,4 +15,6 @@
 //= require turbolinks
 //= require pen/pen
 //= require pen/markdown
+//= require posts/posts
+//= require posts/posts_show
 //= require_tree .

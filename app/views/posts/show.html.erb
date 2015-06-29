@@ -1,6 +1,15 @@
-<h1><%= @post.title %></h1>
+<span id = "wiki-edit">viewing post! <a style="color:blue;text-decoration:underline;cursor:pointer;" onclick="Page.performPageAction('edit')">edit?</a></span>
+<span id = "wiki-save" style="display:none">editing post! <a style="color:blue;text-decoration:underline;cursor:pointer;" onclick="Page.performPageAction('save')">save</a> or <a style="color:blue;text-decoration:underline;cursor:pointer;" onclick="Page.performPageAction('undo')">undo</a></span>
 
-<%= @post.body %>
+<div id ="wiki-title">
+  <h1><%= @post.title %></h1>
+</div>
+
+<p />
+
+<div id="wiki-content">
+  <%= @post.body %>
+</div>
 
 <p />
 

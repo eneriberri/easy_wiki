@@ -29,3 +29,4 @@ UTIL = {
 };
 
 $( document ).ready( UTIL.init );
+$( document ).on('page:load', UTIL.init);

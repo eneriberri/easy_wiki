@@ -1,5 +1,5 @@
 <span id = "wiki-edit">viewing post! <a style="color:blue;text-decoration:underline;cursor:pointer;" onclick="Page.performPageAction('edit')">edit?</a></span>
-<span id = "wiki-save" style="display:none">editing post! <a style="color:blue;text-decoration:underline;cursor:pointer;" onclick="Page.performPageAction('save')">save</a> or <a style="color:blue;text-decoration:underline;cursor:pointer;" onclick="Page.performPageAction('undo')">undo</a></span>
+<span id = "wiki-save" style="display:none">editing post! <a style="color:blue;text-decoration:underline;cursor:pointer;" onclick="Page.performPageAction('save', JSON.parse('<%=escape_javascript(@post.to_json) %>'))">save</a> or <a style="color:blue;text-decoration:underline;cursor:pointer;" onclick="Page.performPageAction('undo')">undo</a></span>
 
 <div id ="wiki-title">
   <h1><%= @post.title %></h1>
@@ -8,7 +8,7 @@
 <p />
 
 <div id="wiki-content">
-  <%= @post.body %>
+  <%=@post.body.html_safe %>
 </div>
 
 <p />

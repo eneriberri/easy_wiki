@@ -19,7 +19,7 @@ $ ->
     # edit: if we aren't currently editing, edit the wiki content
     # undo: if we're currently editing, undo all recent changes and stop editing
     # save: if we're currently editing, save current changes and stop editing
-    performPageAction: (action) ->
+    performPageAction: (action, data) ->
       edit = =>
         @contentHistory = @content.html()
         @bodyEditor.rebuild()
@@ -32,6 +32,13 @@ $ ->
           @save.hide()
           @edit.show()
           @state = 'view'
+          if data?
+            data.body = @content.html().trim()
+            $.ajax({
+              type:'PATCH',
+              url: "/posts/#{data.id}",
+              data: {post: data}
+            });
         else
           console.error("no. i can't perform action #{action} while in state #{state}")
       undo = =>

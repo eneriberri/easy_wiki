@@ -13,7 +13,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(params[:post])
-  
+
     if @post.save
       redirect_to post_url(@post)
     else
@@ -24,13 +24,13 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    render :edit
+    render :show
   end
 
   def update
     @post = Post.find(params[:id])
-  
-    if @post.update_attributes(params[:post])
+    p params
+    if @post.update_attributes(post_params)
       render :show
     else
       render :json => "ruh roh"
@@ -40,18 +40,18 @@ class PostsController < ApplicationController
   def destroy
     #TODO
   end
-  
+
   def tagged
-    if params[:tag].present? 
+    if params[:tag].present?
       @posts = Post.tagged_with(params[:tag])
-    else 
+    else
       @posts = Post.all
-    end  
+    end
     render :index
   end
-  
+
   private
-  
+
   def post_params
     params.require(:post).permit(:title, :body, :user_id, :tag_list)
   end

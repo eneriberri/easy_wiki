@@ -41,6 +41,15 @@ class PostsController < ApplicationController
     #TODO
   end
   
+  def tagged
+    if params[:tag].present? 
+      @posts = Post.tagged_with(params[:tag])
+    else 
+      @posts = Post.all
+    end  
+    render :index
+  end
+  
   private
   
   def post_params

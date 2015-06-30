@@ -2,9 +2,29 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+  background-color: #F3F3F3;
+}
 #search-bar {
   display: inline-block;
 }
 .search-group {
-  width: 33%;
+  width: 32.6%;
+}
+.featured-tags header {
+  margin-bottom: 15px;
+}
+
+.featured-tag {
+  border: 1px solid #CCC;
+  padding: 8px 12px;
+  color: black;
+  font-size: 13px;
+  letter-spacing: 2px;
+  margin: 5px;
+  &:hover {
+//    background-color: black;
+//    color: white;
+    border: 1px solid #999;
+  }
 }

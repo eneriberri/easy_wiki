@@ -8,22 +8,29 @@
 		</nav>
 </div>
 
-<a href = "/posts/">back</a><br><br>
-<span id = "wiki-edit">viewing post! <a style="color:blue;text-decoration:underline;cursor:pointer;" onclick="Page.performPageAction('edit')">edit?</a></span>
+<div class="row">
+	<div class="small-12 large-4 columns">
+			<a href = "/posts/">back</a><br><br>
+	</div>
+</div>
+<div class="row">
+	<span id = "wiki-edit">viewing post! <a style="color:blue;text-decoration:underline;cursor:pointer;" onclick="Page.performPageAction('edit')">edit?</a></span>
 <span id = "wiki-save" style="display:none">editing post! <a style="color:blue;text-decoration:underline;cursor:pointer;" onclick="Page.performPageAction('save', JSON.parse('<%=escape_javascript(@post.to_json) %>'))">save</a> or <a style="color:blue;text-decoration:underline;cursor:pointer;" onclick="Page.performPageAction('undo')">undo</a></span>
+</div>
 
-<div id ="wiki-title">
-  <h1><%= @post.title %></h1>
+
+<div class="row" id ="wiki-title">
+  	<h1><%= @post.title %></h1>
 </div>
 
 <p />
 
-<div id="wiki-content">
+<div class="row" id="wiki-content">
   <%=@post.body != nil ? @post.body.html_safe : "<br>".html_safe %>
 </div>
 
 <p />
 
-<div id="wiki-tags">
+<div class="row" id="wiki-tags">
   tags: <input type="text" id = "wiki-tags-input" value="<%= @post.tag_list %>"/>
 </div>

@@ -10,6 +10,9 @@ $ ->
       @save = $("#wiki-save")
       @edit = $("#wiki-edit")
       @content = $("#wiki-content")
+      @content.on("dblclick", =>
+        @performPageAction('edit')
+      )
       @contentHistory = @content.html()
       @state = "view"
 
@@ -21,11 +24,12 @@ $ ->
     # save: if we're currently editing, save current changes and stop editing
     performPageAction: (action, data) ->
       edit = =>
-        @contentHistory = @content.html()
-        @bodyEditor.rebuild()
-        @save.show()
-        @edit.hide()
-        @state = 'edit'
+        unless @state == 'edit'
+          @contentHistory = @content.html()
+          @bodyEditor.rebuild()
+          @save.show()
+          @edit.hide()
+          @state = 'edit'
       save = =>
         if @state == 'edit'
           @bodyEditor.destroy()
@@ -47,6 +51,7 @@ $ ->
           @save.hide()
           @edit.show()
           @content.html(@contentHistory)
+          @state = 'view'
         else
           console.error("no. i can't perform action #{action} while in state #{state}")
 

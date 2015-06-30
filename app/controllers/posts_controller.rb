@@ -30,6 +30,9 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
+    if (params[:tag_list])
+      @post.tag_list = params[:tag_list]
+    end
     p params
     if @post.update_attributes(post_params)
       render :show

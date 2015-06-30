@@ -17,7 +17,7 @@ $(document).ready(function() {
   var editor = new Pen({editor: document.getElementById('write-post'), stay: false}),
   $writePost = $('#write-post');
   
-  $writePost.on('click', function(e) {
+  $writePost.one('click', function(e) {
     $writePost.animate({'height': '130px'}, function() {
       var newTags = '<span class="new-tag-wrapper">'+
                     '<i class="fa fa-tags"></i><input type="text" class="new-tags" placeholder="Enter tags here">'+

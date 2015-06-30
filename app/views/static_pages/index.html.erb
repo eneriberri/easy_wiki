@@ -1,6 +1,8 @@
 <!-- Title -->
 <div class="row">
-  <div class="small-8 small-centered columns center first"><h1>Chegg Delta</h1></div>
+  <div class="small-8 small-centered columns center first">
+    <h1 id="headline">CHEGG DELTA</h1>
+  </div>
 </div>
 
 <!-- Search Bar -->
@@ -15,8 +17,8 @@
 
 <!-- New Post -->
 <div class="row">
-  <div class="small-6 small-centered columns center">
-    <input type="text" placeholder="Write a post here...">
+  <div class="small-6 small-centered columns">
+    <div id="write-post">Write a post here...</div>
   </div>
 </div>
 
@@ -25,7 +27,7 @@
 <div class="row">
   <div class="small-8 small-centered columns center">
     <section class="featured-tags">
-      <strong><header>MOST USED TAGS<header/></strong>
+      <strong><header>MOST USED TAGS</header></strong>
       <br />
       <!--Do comma delimited featured tag list here @TODO: make tags linkable -->
       <% @tags.each_with_index do |tag, i| %>

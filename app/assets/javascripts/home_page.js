@@ -11,4 +11,10 @@ $(document).ready(function() {
   });
   
   $('.search-submit').on('click', submitSearch);
+  
+  var editor = new Pen({editor: document.getElementById('write-post'), stay: false});
+  
+  $('#write-post').on('click', function(e) {
+    $(e.target).animate({'height': '130px'});
+  });
 });

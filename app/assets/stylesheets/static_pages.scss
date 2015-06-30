@@ -5,6 +5,9 @@
 body {
   background-color: #F3F3F3;
 }
+#headline {
+  letter-spacing: 5px;
+}
 #search-bar {
   display: inline-block;
 }
@@ -12,7 +15,7 @@ body {
   width: 32.6%;
 }
 .featured-tags header {
-  margin-bottom: 15px;
+  margin-top: 50px;
 }
 
 .featured-tag {
@@ -27,4 +30,8 @@ body {
 //    color: white;
     border: 1px solid #999;
   }
+}
+
+#write-post {
+  color: #999;
 }

@@ -22,8 +22,10 @@
   <br>
   <div class="row">
     <div class="large-12 columns">
-      <label>Insert any tags here separated by commas...</label>
-      <%= f.text_field :tag_list %>
+      <span>
+        <i class="fa fa-tags"></i>
+        <%= f.text_field :tag_list, {class: "new-tags", placeholder: "Enter tags here"} %>
+      </span>
     </div>
   </div>
   <div class = "row">

@@ -7,6 +7,7 @@ body {
 }
 #headline {
   letter-spacing: 5px;
+  margin-bottom: 30px;
 }
 #search-bar {
   display: inline-block;
@@ -26,12 +27,25 @@ body {
   letter-spacing: 2px;
   margin: 5px;
   &:hover {
-//    background-color: black;
-//    color: white;
     border: 1px solid #999;
   }
 }
 
+//Write new post styling
 #write-post {
   color: #999;
+}
+.new-tag-wrapper {
+  display: none;
+}
+.fa-tags {
+  color: #999;
+}
+input.new-tags {
+  display: inline-block;
+  margin-left: 5px;
+  border: none;
+  box-shadow: none;
+  background: none;
+  width: 95.2%;
 }

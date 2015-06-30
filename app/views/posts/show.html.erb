@@ -1,3 +1,13 @@
+<div class="contain-to-grid fixed">
+		<nav class="top-bar" data-topbar role="navigation" data-options="is_hover: false">
+			<ul class="title-area">
+				<li class="name">
+					<h1><a href="/">Delta</a></h1>
+				</li>
+			</ul>
+		</nav>
+</div>
+
 <a href = "/posts/">back</a><br><br>
 <span id = "wiki-edit">viewing post! <a style="color:blue;text-decoration:underline;cursor:pointer;" onclick="Page.performPageAction('edit')">edit?</a></span>
 <span id = "wiki-save" style="display:none">editing post! <a style="color:blue;text-decoration:underline;cursor:pointer;" onclick="Page.performPageAction('save', JSON.parse('<%=escape_javascript(@post.to_json) %>'))">save</a> or <a style="color:blue;text-decoration:underline;cursor:pointer;" onclick="Page.performPageAction('undo')">undo</a></span>

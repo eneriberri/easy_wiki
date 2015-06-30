@@ -12,8 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require turbolinks
 //= require pen/pen
 //= require pen/markdown
 //= require_tree ./posts
 //= require_tree .
+
+$(function(){ $(document).foundation(); });

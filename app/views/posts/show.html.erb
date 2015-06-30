@@ -18,7 +18,6 @@
 <span id = "wiki-save" style="display:none">editing post! <a style="color:blue;text-decoration:underline;cursor:pointer;" onclick="Page.performPageAction('save', JSON.parse('<%=escape_javascript(@post.to_json) %>'))">save</a> or <a style="color:blue;text-decoration:underline;cursor:pointer;" onclick="Page.performPageAction('undo')">undo</a></span>
 </div>
 
-
 <div class="row" id ="wiki-title">
   	<h1><%= @post.title %></h1>
 </div>

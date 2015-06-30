@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   end
 
   def new
+    @post = Post.new
     render :new
   end
 
@@ -12,7 +13,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params[:post])
+    @post = Post.new(post_params)
 
     if @post.save
       redirect_to post_url(@post)

@@ -1,5 +1,5 @@
+<a href = "/posts/new">new</a>
 <h1>YAY POSTS!</h1>
-
 <% @posts.each do |post| %>
   <a href="<%=post_url(post.id) %>"> <%= post.title %> </a>
   <br />

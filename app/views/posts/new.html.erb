@@ -1,1 +1,10 @@
+<a href = "/posts/">back</a>
 <h1>Create Post</h1>
+
+<%= form_for @post, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+  <p>Title:</p> <%= f.text_field :title %><br>
+  <p>Body:</p>
+  <div id="post_body_editor"></div><br>
+  <%= f.text_area :body, style: ["display: none"] %>
+  <%= f.submit "Create" %>
+<% end %>

@@ -13,7 +13,7 @@ UTIL = {
     if ( controller !== "" && ns[controller] && typeof ns[controller][action] == "object" ) {
       Page = ns[controller][action];
       if (typeof Page.init === "function") {
-        Page.init()
+        Page.init();
       }
     }
   },

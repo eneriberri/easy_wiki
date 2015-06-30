@@ -32,6 +32,9 @@ gem "font-awesome-rails"
 # Time zone support for Windows
 gem 'tzinfo-data'
 
+# Coffee Script Source 1.9.0 is broken on windows, use 1.8
+gem 'coffee-script-source', '1.8.0'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

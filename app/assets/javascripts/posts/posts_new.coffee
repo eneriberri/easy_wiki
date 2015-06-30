@@ -6,7 +6,7 @@ $ ->
     # called when the posts new page loads
     # initializes page variables
     init: ->
-      @bodyEditor = new Pen('#post_body_editor')
+      @bodyEditor = new Pen({editor: document.getElementById('post_body_editor'), stay: false})
       $('#post_body_editor').on('keyup click blur', @updateState);
       $('.pen-menu').on('click', @updateState);
 

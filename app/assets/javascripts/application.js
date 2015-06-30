@@ -17,6 +17,7 @@
 //= require pen/pen
 //= require pen/markdown
 //= require_tree ./posts
+//= require_tree ./static_pages
 //= require_tree .
 
 $(function(){ $(document).foundation(); });

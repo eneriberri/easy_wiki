@@ -6,7 +6,7 @@ $ ->
     # called when the posts show page loads
     # initializes page variables
     init: ->
-      @bodyEditor = new Pen('#wiki-content').destroy()
+      @bodyEditor = new Pen({editor: document.getElementById('wiki-content'), stay: false}).destroy()
       @save = $("#wiki-save")
       @edit = $("#wiki-edit")
       @tagInput = $('#wiki-tags-input');

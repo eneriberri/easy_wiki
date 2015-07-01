@@ -5,7 +5,18 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+
+    if(params[:wiki].present?)
+      @post.title = params[:wiki]
+      mechanize = Mechanize.new
+      destination = 'http://wiki.cheggnet.com/' + params[:wiki]
+      wikipage = mechanize.get(destination)
+      @post.title = wikipage.title
+      @post.body = wikipage.search(".content")
+    end
+
     render :new
+
   end
 
   def show

@@ -14,6 +14,8 @@ $ ->
         url: '/api/tags/',
         type: 'GET',
         success: (res) ->
+          for tag in res
+            tag.id = tag.text
           $('.new-tags').select2(
             {
               placeholder: "Enter tags here",

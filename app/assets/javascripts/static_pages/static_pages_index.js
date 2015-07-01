@@ -8,11 +8,29 @@ $(document).ready(function() {
       submitSearch = function() {
         window.location.href = '/tagged?tag=' + $('#search-box').val();
       }
-      $('#search-box').on('keypress', function(e) {
-        if(e.keyCode === 13) {
-          submitSearch();
-        }
-      });
+
+      $('#search-box').val("")
+      $('#search-box').select2(
+        {
+          tags: true,
+          width: "resolve",
+          query: function(options) {
+            $.ajax({
+              type: 'GET',
+              url: encodeURI('api/tags/search/' + options.term)
+            }).done(function(a) {
+              result = [];
+              for (var tag in a) {
+                result.push({text: a[tag].text, id: a[tag].text})
+              }
+              options.callback({
+                results: result,
+                more: false
+              })
+            })
+          }
+        });
+
       $('.search-submit').on('click', submitSearch);
 
       
@@ -23,7 +41,6 @@ $(document).ready(function() {
         $writePost.animate({'height': '180px'}, function() {
           $('.new-tag-wrapper').animate({'opacity': '1'});
           $('.new-btn-wrapper').animate({'opacity': '1'});
-          
         });
       });
       

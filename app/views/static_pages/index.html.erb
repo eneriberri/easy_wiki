@@ -13,10 +13,10 @@
 <!-- Search Bar -->
  <div class="row collapse search-group">
   <div class="small-10 columns">
-    <input type="text" placeholder="Search" id="search-box">
+    <input type="text" placeholder="Search" id="search-box"></input>
   </div>
   <div class="small-2 columns">
-    <a href="#" class="button postfix search-submit"><i class="fa fa-search"></i></a>
+    <a href="#" id="home-search-button" class="button postfix search-submit"><i class="fa fa-search"></i></a>
   </div>
 </div>
 
@@ -60,7 +60,6 @@
       <% @tags.each_with_index do |tag, i| %>
         <%= link_to tag.name, tagged_url(:tag => tag.name), :class=>"featured-tag" %>
       <% end %>
-    </section> 
+    </section>
   </div>
 </div>
-

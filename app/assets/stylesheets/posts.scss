@@ -31,7 +31,7 @@
   font-weight: bold;
 }
 
-//Show page
+//Index page
 .all-post-header h1 {
   font-size: 60px;
   letter-spacing: 5px;
@@ -57,6 +57,20 @@
   margin-right: 25px;
   margin-top: 20px;
   opacity: 0.6; 
+}
+
+
+.new-post-header.first {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 60px;
+}
+input.new-post-title {
+  border: none;
+  box-shadow: none;
+  background: none;
+  font-size: 26px;
+  margin-bottom: 20px;
 }
 
 #wiki-title input {

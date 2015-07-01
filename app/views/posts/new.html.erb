@@ -1,24 +1,27 @@
 <div class="row">
-  <div class="large-12 columns">
-    <h1>Create Post</h1>
+  <div class="large-12 columns first new-post-header">
+    <h1>Create Article</h1>
   </div>
 </div>
 
 <%= form_for @post, url: {action: "create"}, html: {class: "create-form"} do |f| %>
   <div class="row">
-    <div class="large-12 columns"> 
-        <label>Title:</label>
-        <%= f.text_field :title %>
+    <div class="large-12 columns">
+        <%= f.text_field :title, {class: "new-post-title", placeholder: "Title"}  %>
       </div>
     </div>
   </div>
+  
   <div class="row">
     <div class="large-12 columns">
-      <label>Body:</label>
-      <div id="post_body_editor" style = "min-height: 250px"></div>
+      <div id="post_body_editor" style = "min-height: 250px">
+        Write here...
+      </div>
     </div>
   </div>
+  
   <br>
+  
   <div class="row">
     <div class="large-12 columns">
       <span>
@@ -27,6 +30,7 @@
       </span>
     </div>
   </div>
+  
   <div class = "row">
     <div class="large-2 columns">&nbsp;</div>
     <div class="large-8 columns">
@@ -34,6 +38,7 @@
     </div>
     <div class="large-2 columns">&nbsp;</div>
   </div>
+  
   <%= f.text_area :body, style: ["display: none"] %>
 
 <% end %>

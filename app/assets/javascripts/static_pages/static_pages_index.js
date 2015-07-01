@@ -47,7 +47,7 @@ $(document).ready(function() {
       //Top right nav bar animation and functionality
       var $tagOverlay = $('#tag-overlay');
       $('.fa-bar-link').on('click', function(e) {
-        $(e.target).fadeOut();
+        $('#nav-links').fadeOut();
         $tagOverlay.animate({'left': 0});
         $.ajax({
           url: '/api/tags/',
@@ -64,7 +64,7 @@ $(document).ready(function() {
       });
 
       $('.fa-times-link').on('click', function(e) {
-        $('.fa-bars').fadeIn();
+        $('#nav-links').fadeIn();
         $tagOverlay.animate({'left': '100%'});
         $('.tags-overlay-wrapper').empty();
       });

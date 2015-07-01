@@ -69,7 +69,10 @@ i.fa.fa-bars, .fa-times-link {
 }
 .fa-times-link {
   margin-top: 8px;
+  color: white;
+  opacity: 0.8;
 }
+
 #tag-overlay {
   background-color: black;
   opacity: 0.7;
@@ -79,10 +82,7 @@ i.fa.fa-bars, .fa-times-link {
   z-index: 10;
   left: 100%;
 }
-.fa-times-link {
-  color: white;
-  opacity: 0.8;
-}
+
 a.overlay-tag {
   display: inline-block;
   margin: 15px;

@@ -23,7 +23,7 @@
 <!-- New Post -->
 <div class="row">
   <div class="small-8 small-centered columns">
-    <div id="write-post">Write here...</div>
+    <div id="write-post">Start a new article...</div>
   </div>
 </div>
 
@@ -54,7 +54,7 @@
 <div class="row">
   <div class="small-8 small-centered columns center">
     <section class="featured-tags">
-      <strong><header>MOST USED TAGS</header></strong>
+      <strong><header class="popular-header">MOST POPULAR TAGS</header></strong>
       <br />
       <% @tags.each do |tag| %>
         <%= link_to tag.name, tagged_url(:tag => tag.name), :class=>"featured-tag" %>

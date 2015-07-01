@@ -53,8 +53,22 @@
 }
 .fa.fa-plus-circle {
   font-size: 50px;
-  float: left;
-  margin-left: 25px;
+  float: right;
+  margin-right: 25px;
   margin-top: 20px;
   opacity: 0.6; 
+}
+
+#wiki-title input {
+  margin-left: 0px;
+  border: none;
+  box-shadow: none;
+  background: none;
+  padding-top: 120px;
+  padding-bottom: 20px;
+  margin-bottom: 70px;
+  font-size: 72px;
+  font-weight: bold;
+  padding-left: 0;
+  padding-right: 0;
 }

@@ -9,15 +9,20 @@ $ ->
       @bodyEditor = new Pen({editor: document.getElementById('wiki-content'), stay: false}).destroy()
       @save = $("#wiki-save")
       @edit = $("#wiki-edit")
-      @tagInput = $('#wiki-tags-input');
+      @tagInput = $('#wiki-tags-input')
       @content = $("#wiki-content")
+      @titleInput = $('#wiki-title-input')
       @content.on("dblclick", =>
+        @performPageAction('edit')
+      )
+      $('#wiki-title').on("dblclick", =>
         @performPageAction('edit')
       )
       @contentHistory = @content.html()
       @state = "view"
       @tagInput.prop("disabled", true)
       @tags = @tagInput.val()
+      @title = @titleInput.val()
 
     # change the state of the page by performing the specified page action
     # valid actions on this page are: 'edit', 'undo', 'save'
@@ -33,6 +38,7 @@ $ ->
           @save.show()
           @edit.hide()
           @tagInput.prop("disabled", false)
+          @titleInput.prop("disabled", false)
           @state = 'edit'
       save = =>
         if @state == 'edit'
@@ -41,10 +47,13 @@ $ ->
           @edit.show()
           @state = 'view'
           @tagInput.prop("disabled", true)
+          @titleInput.prop("disabled", true)
           @tags = @tagInput.val()
+          @title = @titleInput.val()
           if data?
             data.body = @content.html().trim()
             data.tag_list = @tags
+            data.title = @title.trim()
             $.ajax({
               type:'PATCH',
               url: "/posts/#{data.id}",
@@ -59,6 +68,7 @@ $ ->
           @edit.show()
           @content.html(@contentHistory)
           @tagInput.prop("disabled", true).val(@tags)
+          @titleInput.prop("disabled", true).val(@title)
           @state = 'view'
         else
           console.error("no. i can't perform action #{action} while in state #{state}")

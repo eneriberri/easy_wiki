@@ -10,7 +10,17 @@ $ ->
       @bodyEditor = new Pen({editor: document.getElementById('post_body_editor'), stay: false})
       $('#post_body_editor').on('keyup click blur', @updateState);
       $('.pen-menu').on('click', @updateState);
-
+      $.ajax({
+        url: '/api/tags/',
+        type: 'GET',
+        success: (res) ->
+          $('.new-tags').select2(
+            {
+              placeholder: "Enter tags here",
+              tags: res,
+              tokenSeparators: [",", "  "]
+            });
+      });
 
     updateState: ->
       $('#post_body').val($('#post_body_editor').html());

@@ -46,8 +46,14 @@ $(document).ready(function() {
       
       
       //Top right nav bar
-      $('.fa-bar-link').on('click', function() {
+      $('.fa-bar-link').on('click', function(e) {
+        $(e.target).fadeOut();
         $('#tag-overlay').animate({'left': 0});
+      });
+      
+      $('#tag-overlay').on('click', function(e) {
+        $('.fa-bars').fadeIn();
+        $('#tag-overlay').animate({'left': '100%'});
       });
       
     },

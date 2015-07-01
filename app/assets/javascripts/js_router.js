@@ -10,10 +10,14 @@ UTIL = {
   exec: function( controller, action ) {
     var ns = EASY_WIKI,
         action = ( action === undefined ) ? "init" : action;
-    if ( controller !== "" && ns[controller] && typeof ns[controller][action] == "object" ) {
-      Page = ns[controller][action];
-      if (typeof Page.init === "function") {
-        Page.init();
+    if (controller !== "" && ns[controller]) {
+      if (typeof ns[controller][action] == "object" ) {
+        Page = ns[controller][action];
+        if (typeof Page.init === "function") {
+          Page.init();
+        }
+      } else if (typeof ns[controller][action] == "function") {
+        ns[controller][action]();
       }
     }
   },

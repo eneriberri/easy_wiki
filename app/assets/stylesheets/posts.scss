@@ -69,8 +69,33 @@ input.new-post-title {
   border: none;
   box-shadow: none;
   background: none;
-  font-size: 26px;
+  font-size: 55px;
+  margin-top: 50px;
   margin-bottom: 20px;
+  height: 90px;
+}
+.new-post-body {
+  padding: 10 25px;
+}
+div#post_body_editor {
+  height: 320px;
+}
+
+//Tag input field
+.new-post-tags i.fa.fa-tags {
+  font-size: 20px;
+}
+div#s2id_post_tag_list {
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 15px;
+  width: 95%;
+  background-color: transparent;
+}
+.select2-container-multi ul.select2-choices {
+  border: none;
+  background: none;
+  box-shadow: none;
 }
 
 #wiki-title input {
@@ -85,4 +110,20 @@ input.new-post-title {
   font-weight: bold;
   padding-left: 0;
   padding-right: 0;
+}
+
+.new-post-btn.full-page-btn {
+  width: 100%;
+  font-size: 20px;
+  padding: 15px 20px;
+  margin-bottom: 100px;
+  margin-top: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+  }
 }

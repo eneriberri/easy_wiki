@@ -1,19 +1,13 @@
-<div class="row">
-  <div class="large-12 columns first new-post-header">
-    <h1>Create Article</h1>
-  </div>
-</div>
-
 <%= form_for @post, url: {action: "create"}, html: {class: "create-form"} do |f| %>
   <div class="row">
-    <div class="large-12 columns">
+    <div class="large-12 columns first new-post-header">
         <%= f.text_field :title, {class: "new-post-title", placeholder: "Title"}  %>
       </div>
     </div>
   </div>
   
   <div class="row">
-    <div class="large-12 columns">
+    <div class="large-12 columns new-post-body">
       <div id="post_body_editor" style = "min-height: 250px">
         Write here...
       </div>
@@ -23,7 +17,7 @@
   <br>
   
   <div class="row">
-    <div class="large-12 columns">
+    <div class="large-12 columns new-post-tags">
       <span>
         <i class="fa fa-tags"></i>
         <%= f.text_field :tag_list, {class: "new-tags", placeholder: "Enter tags here"} %>
@@ -34,7 +28,7 @@
   <div class = "row">
     <div class="large-2 columns">&nbsp;</div>
     <div class="large-8 columns">
-      <%= f.submit "Create", {class: "button expand"} %>
+      <%= f.submit "Publish", {class: "new-post-btn full-page-btn"} %>
     </div>
     <div class="large-2 columns">&nbsp;</div>
   </div>

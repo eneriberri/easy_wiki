@@ -94,3 +94,8 @@ a.overlay-tag:hover {
   background-color: white;
   color: black;
 }
+
+.pen-menu .pen-icon.icon-insertimage:before {
+  width: 2.5em;
+  padding: 2px;
+}

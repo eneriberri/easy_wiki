@@ -29,3 +29,13 @@
 .opaque {
   opacity: 0;
 }
+i.fa.fa-bars {
+  font-size: 40px;
+  opacity: .6;
+  float: right;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+a.fa-bar-link {
+  opacity: .6;
+}

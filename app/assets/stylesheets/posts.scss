@@ -121,14 +121,14 @@ input.new-post-title {
   height: 90px;
   letter-spacing: 1px;
   &:focus {
-   background-color: transparent; 
+   background-color: transparent;
   }
 }
 .new-post-body #post_body_editor {
   padding: 15px;
 }
 div#post_body_editor {
-  height: 320px;
+  min-height: 320px;
 }
 .add-attachments {
   display: inline-block;

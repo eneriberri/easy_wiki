@@ -45,15 +45,29 @@ $(document).ready(function() {
       });
       
       
-      //Top right nav bar
+      //Top right nav bar animation and functionality
+      var $tagOverlay = $('#tag-overlay');
       $('.fa-bar-link').on('click', function(e) {
         $(e.target).fadeOut();
-        $('#tag-overlay').animate({'left': 0});
+        $tagOverlay.animate({'left': 0});
+        $.ajax({
+          url: '/api/tags/',
+          type: 'GET',
+          success: function(res) {
+            for(var i = 0, n = res.length; i < n; i++) {
+              var tag = res[i]['text'],
+              link = '/tagged?tag=' + tag;
+              
+              $('.tags-overlay-wrapper').append('<a class="overlay-tag" href="'+link+'">'+tag+'</span>');
+            } 
+          }
+        });
       });
       
-      $('#tag-overlay').on('click', function(e) {
+      $('.fa-times-link').on('click', function(e) {
         $('.fa-bars').fadeIn();
-        $('#tag-overlay').animate({'left': '100%'});
+        $tagOverlay.animate({'left': '100%'});
+        $('.tags-overlay-wrapper').empty();
       });
       
     },

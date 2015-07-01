@@ -45,6 +45,15 @@
 .opaque {
   opacity: 0;
 }
+
+/* Tag overlay*/
+.navigate-header {
+  font-size: 32px;
+  color: white;
+  letter-spacing: 5px;
+  display: inline-block;
+  margin: 40px 0;
+}
 i.fa.fa-bars, .fa-times-link {
   font-size: 40px;
   opacity: 0.6;
@@ -67,4 +76,15 @@ i.fa.fa-bars, .fa-times-link {
 .fa-times-link {
   color: white;
   opacity: 0.8;
+}
+a.overlay-tag {
+  display: inline-block;
+  margin: 15px;
+  border: 3px solid white;
+  padding: 10px 20px;
+  color: white;
+}
+a.overlay-tag:hover {
+  background-color: white;
+  color: black;
 }

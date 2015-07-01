@@ -5,7 +5,18 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+
+    if(params[:wiki].present?)
+      @post.title = params[:wiki]
+      mechanize = Mechanize.new
+      destination = 'http://wiki.cheggnet.com/' + params[:wiki]
+      wikipage = mechanize.get(destination)
+      @post.title = wikipage.title
+      @post.body = wikipage.search(".content")
+    end
+
     render :new
+
   end
 
   def show
@@ -53,43 +64,6 @@ class PostsController < ApplicationController
     end
     render :index
   end
-
-  # (allthethings)
-  def allthetags
-    @posts = Post.all
-    @tags = {}
-    @tagArray = []
-    @posts.each do |post|
-      post.tags.each do |tag|
-        @tags[tag.id] = tag
-      end
-    end
-
-    @tags.each do |tag|
-      @tagArray.push({text: tag[1].name, id:tag[1].id, count:tag[1].taggings_count})
-    end
-    render :json => @tagArray
-  end
-
-  def tagsearch
-    @name = params[:name]
-    @posts = Post.all
-    @tags = {}
-    @tagArray = []
-    @posts.each do |post|
-      post.tags.each do |tag|
-        if tag.name.index(@name) != nil
-          @tags[tag.id] = tag
-        end
-      end
-    end
-
-    @tags.each do |tag|
-      @tagArray.push({text: tag[1].name, id:tag[1].id, count:tag[1].taggings_count})
-    end
-    render :json => @tagArray
-  end
-
 
   private
 

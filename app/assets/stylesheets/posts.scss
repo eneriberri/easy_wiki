@@ -51,12 +51,29 @@
 .all-post-tags {
   margin-bottom: 25px;
 }
-.fa.fa-plus-circle {
+
+$rotation-duration: 0.6s;
+$rotation-degree: 180deg;
+.fa.fa-plus-circle, .fa.fa-plus-square-o {
   font-size: 50px;
   float: right;
   margin-right: 25px;
   margin-top: 20px;
-  opacity: 0.6; 
+  opacity: 0.6;
+  -webkit-transition-duration: $rotation-duration;
+  -moz-transition-duration: $rotation-duration;
+  -o-transition-duration: $rotation-duration;
+  transition-duration: $rotation-duration;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  transition-property: transform;
+  overflow: hidden;
+  &:hover {
+    -webkit-transform:rotate($rotation-degree);
+    -moz-transform:rotate($rotation-degree);
+    -o-transform:rotate($rotation-degree);
+  }
 }
 
 
@@ -72,6 +89,7 @@ input.new-post-title {
   font-size: 55px;
   margin-bottom: 20px;
   height: 90px;
+  letter-spacing: 1px;
 }
 .new-post-body {
   padding: 10px 25px;
@@ -86,7 +104,7 @@ div#post_body_editor {
 
 //Tag input field
 .new-post-tags i.fa.fa-tags {
-  font-size: 20px;
+  font-size: 17px;
 }
 div#s2id_post_tag_list {
   display: inline-block;

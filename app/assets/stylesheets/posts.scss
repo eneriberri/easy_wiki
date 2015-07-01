@@ -58,12 +58,51 @@
   letter-spacing: 2px;
   margin-bottom: 30px;
 }
+
 .fa.fa-plus-circle {
   font-size: 40px;
+
+.pagination-wrapper {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.page {
+  cursor: pointer;
+  padding: 2px 10px;
+  border: 1px solid #999;
+  border-radius: 3px;
+  display: inline-block;
+  color: #008CBA;
+}
+.page-selected {
+  color: #999;
+  margin-left: 20px;
+}
+$rotation-duration: 0.6s;
+$rotation-degree: 180deg;
+.fa.fa-plus-circle, .fa.fa-plus-square-o {
+  font-size: 50px;
   float: right;
   margin-right: 25px;
   margin-top: 20px;
   opacity: 0.6;
+  -webkit-transition-duration: $rotation-duration;
+  -moz-transition-duration: $rotation-duration;
+  -o-transition-duration: $rotation-duration;
+  transition-duration: $rotation-duration;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  transition-property: transform;
+  overflow: hidden;
+  &:hover {
+    -webkit-transform:rotate($rotation-degree);
+    -moz-transform:rotate($rotation-degree);
+    -o-transform:rotate($rotation-degree);
+  }
 }
 
 
@@ -76,8 +115,37 @@ input.new-post-title {
   border: none;
   box-shadow: none;
   background: none;
-  font-size: 26px;
+  font-size: 55px;
   margin-bottom: 20px;
+  height: 90px;
+  letter-spacing: 1px;
+}
+.new-post-body {
+  padding: 10px 25px;
+}
+div#post_body_editor {
+  height: 320px;
+}
+.add-attachments {
+  display: inline-block;
+  color: #999;
+}
+
+//Tag input field
+.new-post-tags i.fa.fa-tags {
+  font-size: 17px;
+}
+div#s2id_post_tag_list {
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 15px;
+  width: 95%;
+  background-color: transparent;
+}
+.select2-container-multi ul.select2-choices {
+  border: none;
+  background: none;
+  box-shadow: none;
 }
 
 #wiki-title input {
@@ -92,4 +160,20 @@ input.new-post-title {
   font-weight: bold;
   padding-left: 0;
   padding-right: 0;
+}
+
+.new-post-btn.full-page-btn {
+  width: 100%;
+  font-size: 20px;
+  padding: 15px 20px;
+  margin-bottom: 100px;
+  margin-top: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+  }
 }

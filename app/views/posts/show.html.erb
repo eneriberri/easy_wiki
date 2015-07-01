@@ -1,5 +1,6 @@
-<div class="row" id ="wiki-title">
-  	<h1><%= @post.title %></h1>
+
+<div class="row" id="wiki-title">
+  	<input id ="wiki-title-input" type="text" value="<%= @post.title %>" disabled/>
 </div>
 
 <p />
@@ -16,8 +17,8 @@
   <% @post.tags.each do |tag| %>
     <%= link_to tag.name, tagged_url(:tag => tag.name), :class=>"featured-tag" %>
   <% end %>
-  
- 
+
+
 </div>
 
 <div class="row">

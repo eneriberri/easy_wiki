@@ -18,6 +18,9 @@
  *= require pen/pen
  *= require select2
  */
+body {
+  overflow-x: hidden;
+}
 
 .center {
   text-align: center;

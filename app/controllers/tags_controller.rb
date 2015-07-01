@@ -18,13 +18,13 @@ class TagsController < ApplicationController
   end
 
   def tagsearch
-    @name = params[:name]
+    @name = params[:name].downcase
     @posts = Post.all
     @tags = {}
     @tagArray = []
     @posts.each do |post|
       post.tags.each do |tag|
-        if tag.name.index(@name) != nil
+        if tag.name.downcase.index(@name) != nil
           @tags[tag.id] = tag
         end
       end
@@ -35,5 +35,5 @@ class TagsController < ApplicationController
     end
     render :json => @tagArray
   end
-  
+
 end

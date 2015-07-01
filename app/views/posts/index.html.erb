@@ -18,14 +18,36 @@
 <div class="row">
   <div class="small-12 columns">
   	<% @posts.each do |post| %>
-  	  <a href="<%=post_url(post.id) %>" class="all-post-link"> <%= post.title %> </a>
+    <div class="all-post-link">
+  	  <a href="<%=post_url(post.id) %>"> <%= post.title %> </a>
+    </div>
       <div class="all-post-body">
         <%= strip_tags(post.body)[0,100] %>...
       </div>
-      <div class="all-post-tags">
+      <div class="all-post-section all-post-tags">
         <i class="fa fa-tags"></i><span class="post-tag-header">TAGS:</span>
         <% post.tags.each do |tag| %>
           <%= link_to tag.name, tagged_url(:tag => tag.name), :class=>"featured-tag" %>
+        <% end %>
+      </div>
+      <div class="all-post-section all-post-modified">
+        <i class="fa fa-clock-o"></i><span class="post-tag-header">UPDATED:</span>
+        <% @time = (Time.now.getutc - post.updated_at).to_i %>
+        <% case @time %>
+        <% when 0...45 %>
+        <%= "A few seconds ago" %>
+        <% when 45...90 %>
+        <%= "About a minute ago" %>
+        <% when 90...3600 %>
+        <%= (@time / 60).to_s + " minutes ago" %>
+        <% when 3601...(3600*24-1) %>
+        <%= (@time/3600).to_s + " hours ago" %>
+        <% when 3600*24...(3600*24*365-1) %>
+        <%= (@time/3600*24).to_s + " days ago" %>
+        <% when 3600*24*365...3600*24*365*2 %>
+        <%= "Over a year ago" %>
+        <% else %>
+        <%= "Over" + (@time/3600*24*365) + " years ago" %>
         <% end %>
       </div>
   	  <br />

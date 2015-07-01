@@ -95,14 +95,6 @@ a.overlay-tag:hover {
   color: black;
 }
 
-.nav-chegg-shield {
-  width: 55px;
-  display: inline-block;
-  float: left;
-  margin-left: 10px;
-  margin-top: 10px;
-}
-
 .pen-menu .pen-icon.icon-insertimage:before {
   width: 2.5em;
   padding: 2px;

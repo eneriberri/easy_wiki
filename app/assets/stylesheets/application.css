@@ -94,3 +94,11 @@ a.overlay-tag:hover {
   background-color: white;
   color: black;
 }
+
+.nav-chegg-shield {
+  width: 55px;
+  display: inline-block;
+  float: left;
+  margin-left: 10px;
+  margin-top: 10px;
+}

@@ -9,14 +9,14 @@
 <body data-controller="<%= controller_name %>" data-action="<%= action_name %>">
 
 <!-- Nav right menu icon -->
-<a class="fa-bar-link" href="#"><i class="fa fa-bars"></i></a>
+<div id="nav-links"><a class="fa-bar-link" href="#"><i class="fa fa-bars"></i></a><a href="/posts/new"><i class="fa fa-plus-circle"></i></a></div>
 
 <!-- Tag overlay -->
 <div id="tag-overlay">
   <a class="fa-times-link"><i class="fa fa-times"></i></a>
   <div class="row">
     <div class="small-11 small-centered columns first center">
-      <span class="navigate-header">NAVIGATE BY TAG</span>
+      <span class="navigate-header"><a href="/" style="color:white">NAVIGATE BY TAG</a></span>
     </div>
   </div>
   <div class="row">

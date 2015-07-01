@@ -23,7 +23,7 @@
 
 <div class="row">
   <div class="small-12 columns last edit-wrapper" id="wiki-save" style="display:none">
-      You're editing your article! <br />
-      <a style="color:blue;text-decoration:underline;cursor:pointer;" onclick="Page.performPageAction('save', JSON.parse('<%=escape_javascript(@post.to_json) %>'))">Save</a> | <a style="color:blue;text-decoration:underline;cursor:pointer;" onclick="Page.performPageAction('undo')">Undo</a>
+      <span class="edit-header">You're editing!</span><br />
+      <a onclick="Page.performPageAction('save', JSON.parse('<%=escape_javascript(@post.to_json) %>'))">Save</a> | <a onclick="Page.performPageAction('undo')">Undo</a>
   </div>
 </div>

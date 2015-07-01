@@ -73,6 +73,9 @@
   border-radius: 3px;
   display: inline-block;
   color: #008CBA;
+  &:hover {
+    background-color: white;
+  }
 }
 .page-selected {
   color: #999;
@@ -103,6 +106,7 @@ $rotation-degree: 180deg;
 }
 
 
+//New post page
 .new-post-header.first {
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -116,6 +120,9 @@ input.new-post-title {
   margin-bottom: 20px;
   height: 90px;
   letter-spacing: 1px;
+  &:focus {
+   background-color: transparent; 
+  }
 }
 .new-post-body {
   padding: 10px 25px;
@@ -173,4 +180,13 @@ div#s2id_post_tag_list {
   &:hover {
     opacity: 1;
   }
+}
+
+
+//Show post page
+.edit-wrapper {
+  margin-top: 50px;
+}
+#wiki-tags {
+  margin-bottom: 50px;
 }

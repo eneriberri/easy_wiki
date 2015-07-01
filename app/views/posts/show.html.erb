@@ -22,10 +22,8 @@
 </div>
 
 <div class="row">
-  <div class="small-12 columns last">
-    <span id = "wiki-save" style="display:none">
+  <div class="small-12 columns last edit-wrapper" id="wiki-save" style="display:none">
       You're editing your article! <br />
       <a style="color:blue;text-decoration:underline;cursor:pointer;" onclick="Page.performPageAction('save', JSON.parse('<%=escape_javascript(@post.to_json) %>'))">Save</a> | <a style="color:blue;text-decoration:underline;cursor:pointer;" onclick="Page.performPageAction('undo')">Undo</a>
-    </span>
   </div>
 </div>

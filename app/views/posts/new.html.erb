@@ -1,7 +1,7 @@
 <%= form_for @post, url: {action: "create"}, html: {class: "create-form"} do |f| %>
   <div class="row">
     <div class="large-12 columns first new-post-header">
-        <%= f.text_field :title, {class: "new-post-title", placeholder: "Title"}  %>
+        <%= f.text_field :title, {class: "new-post-title", placeholder: "Title", autofocus: true}  %>
       </div>
     </div>
   </div>

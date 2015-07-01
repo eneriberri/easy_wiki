@@ -37,8 +37,9 @@ $ ->
           @bodyEditor.rebuild()
           @save.show()
           @edit.hide()
-          @tagInput.prop("disabled", false)
-          @titleInput.prop("disabled", false)
+          #@tagInput.prop("disabled", false)
+          @titleInput.prop("disabled", false).css("background-color","rgb(250,250,250)")
+          @content.css("background-color","rgb(250,250,250)")
           @state = 'edit'
       save = =>
         if @state == 'edit'
@@ -46,10 +47,11 @@ $ ->
           @save.hide()
           @edit.show()
           @state = 'view'
-          @tagInput.prop("disabled", true)
-          @titleInput.prop("disabled", true)
+          #@tagInput.prop("disabled", true)
+          @titleInput.prop("disabled", true).css("background-color","")
           @tags = @tagInput.val()
           @title = @titleInput.val()
+          @content.css("background-color","")
           if data?
             data.body = @content.html().trim()
             data.tag_list = @tags
@@ -67,9 +69,10 @@ $ ->
           @save.hide()
           @edit.show()
           @content.html(@contentHistory)
-          @tagInput.prop("disabled", true).val(@tags)
-          @titleInput.prop("disabled", true).val(@title)
+          #@tagInput.prop("disabled", true).val(@tags)
+          @titleInput.prop("disabled", true).val(@title).css("background-color","")
           @state = 'view'
+          @content.css("background-color","")
         else
           console.error("no. i can't perform action #{action} while in state #{state}")
 

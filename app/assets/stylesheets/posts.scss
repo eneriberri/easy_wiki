@@ -117,8 +117,8 @@ input.new-post-title {
   height: 90px;
   letter-spacing: 1px;
 }
-.new-post-body {
-  padding: 10px 25px;
+.new-post-body #post_body_editor {
+  padding: 15px;
 }
 div#post_body_editor {
   height: 320px;
@@ -173,4 +173,8 @@ div#s2id_post_tag_list {
   &:hover {
     opacity: 1;
   }
+}
+
+#wiki-content {
+  padding: 10px;
 }

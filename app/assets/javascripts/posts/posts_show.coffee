@@ -38,7 +38,7 @@ $ ->
           @save.show()
           @edit.hide()
           #@tagInput.prop("disabled", false)
-          @titleInput.prop("disabled", false).css("background-color","rgb(250,250,250)")
+          @titleInput.prop("disabled", false)
           @content.css("background-color","rgb(250,250,250)")
           @state = 'edit'
       save = =>
@@ -48,7 +48,7 @@ $ ->
           @edit.show()
           @state = 'view'
           #@tagInput.prop("disabled", true)
-          @titleInput.prop("disabled", true).css("background-color","")
+          @titleInput.prop("disabled", true)
           @tags = @tagInput.val()
           @title = @titleInput.val()
           @content.css("background-color","")
@@ -70,7 +70,7 @@ $ ->
           @edit.show()
           @content.html(@contentHistory)
           #@tagInput.prop("disabled", true).val(@tags)
-          @titleInput.prop("disabled", true).val(@title).css("background-color","")
+          @titleInput.prop("disabled", true).val(@title)
           @state = 'view'
           @content.css("background-color","")
         else

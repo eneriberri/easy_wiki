@@ -1,20 +1,28 @@
-<!-- Top Navigation -->
-<div class="contain-to-grid fixed">
-	<nav class="top-bar" data-topbar role="navigation" data-options="is_hover: false">
-		<ul class="title-area">
-			<li class="name">
-				<h1><a href="/">Delta</a></h1>
-			</li>
-		</ul>
-	</nav>
+<div class="row">
+  <div class="small-12 columns first all-post-header">
+  	<h1>Articles</h1>
+  </div>
 </div>
 
+<div class="row">
+  <div class="small-12 columns">
+  	<% @posts.each do |post| %>
+  	  <a href="<%=post_url(post.id) %>" class="all-post-link"> <%= post.title %> </a>
+      <div class="all-post-body">
+        <%= strip_tags(post.body)[0,100] %>...
+      </div>
+      <div class="all-post-tags">
+        <% post.tags.each do |tag| %>
+          <%= link_to tag.name, tagged_url(:tag => tag.name), :class=>"featured-tag" %>
+        <% end %>
+      </div>
+  	  <br />
+  	<% end %>
+  </div>
+</div>
 
 <div class="row">
-	<a href = "/posts/new">new</a>
-	<h1>Articles</h1>
-	<% @posts.each do |post| %>
-	  <a href="<%=post_url(post.id) %>"> <%= post.title %> </a>
-	  <br />
-	<% end %>
+  <div class="small-12 columns last">
+    <a href = "/posts/new">Create new</a>
+  </div>
 </div>

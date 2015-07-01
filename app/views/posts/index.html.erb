@@ -1,3 +1,5 @@
+<a href="/posts/new"><i class="fa fa-plus-circle"></i></a>
+
 <div class="row">
   <div class="small-12 columns first all-post-header">
   	<h1>Articles</h1>
@@ -12,17 +14,12 @@
         <%= strip_tags(post.body)[0,100] %>...
       </div>
       <div class="all-post-tags">
+        <i class="fa fa-tags"></i><span class="post-tag-header">TAGS:</span>
         <% post.tags.each do |tag| %>
           <%= link_to tag.name, tagged_url(:tag => tag.name), :class=>"featured-tag" %>
         <% end %>
       </div>
   	  <br />
   	<% end %>
-  </div>
-</div>
-
-<div class="row">
-  <div class="small-12 columns last">
-    <a href = "/posts/new">Create new</a>
   </div>
 </div>

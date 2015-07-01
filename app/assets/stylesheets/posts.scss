@@ -20,7 +20,7 @@
   padding-top: 10px;
   margin-top: 50px;
 }
-#wiki-tags .fa-tags {
+#wiki-tags .fa-tags, .all-post-tags .fa-tags {
   color: black;
 }
 .post-tag-header {
@@ -37,7 +37,7 @@
   letter-spacing: 5px;
   text-transform: uppercase;
   margin-top: 100px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 .all-post-link {
   font-size: 22px;
@@ -50,4 +50,11 @@
 }
 .all-post-tags {
   margin-bottom: 25px;
+}
+.fa.fa-plus-circle {
+  font-size: 50px;
+  float: left;
+  margin-left: 25px;
+  margin-top: 20px;
+  opacity: 0.6; 
 }

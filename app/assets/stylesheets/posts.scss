@@ -70,15 +70,18 @@ input.new-post-title {
   box-shadow: none;
   background: none;
   font-size: 55px;
-  margin-top: 50px;
   margin-bottom: 20px;
   height: 90px;
 }
 .new-post-body {
-  padding: 10 25px;
+  padding: 10px 25px;
 }
 div#post_body_editor {
   height: 320px;
+}
+.add-attachments {
+  display: inline-block;
+  color: #999;
 }
 
 //Tag input field

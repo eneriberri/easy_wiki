@@ -99,3 +99,16 @@ a.overlay-tag:hover {
   width: 2.5em;
   padding: 2px;
 }
+
+.chegg-menu-logo {
+  width: 50px;
+  height: 45px;
+  opacity: 0.4;
+  float: left;
+  margin: 15px;
+  cursor: pointer;
+}
+.chegg-menu-logo:hover {
+  opacity: 0.9;
+}
+

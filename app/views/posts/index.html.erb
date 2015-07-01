@@ -38,7 +38,9 @@
         <%= "About a minute ago" %>
         <% when 90...3600 %>
         <%= (@time / 60).to_s + " minutes ago" %>
-        <% when 3601...(3600*24-1) %>
+        <% when 3601...(3600*2-1) %>
+        <%= "Over an hour ago" %>
+        <% when 3600*2...(3600*24-1) %>
         <%= (@time/3600).to_s + " hours ago" %>
         <% when 3600*24...(3600*24*365-1) %>
         <%= (@time/3600*24).to_s + " days ago" %>

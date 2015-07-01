@@ -56,8 +56,7 @@
     <section class="featured-tags">
       <strong><header>MOST USED TAGS</header></strong>
       <br />
-      <!--Do comma delimited featured tag list here @TODO: make tags linkable -->
-      <% @tags.each_with_index do |tag, i| %>
+      <% @tags.each do |tag| %>
         <%= link_to tag.name, tagged_url(:tag => tag.name), :class=>"featured-tag" %>
       <% end %>
     </section>

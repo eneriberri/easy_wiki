@@ -7,7 +7,7 @@ $ ->
       #Top right nav bar animation and functionality
       tagOverlay = $('#tag-overlay');
       $('.fa-bar-link').on('click', (e) ->
-        $(e.target).fadeOut();
+        $('#nav-links').fadeOut();
         tagOverlay.animate({'left': 0});
         $.ajax({
           url: '/api/tags/',
@@ -21,7 +21,7 @@ $ ->
       );
 
       $('.fa-times-link').on('click', (e) ->
-        $('.fa-bars').fadeIn();
+        $('#nav-links').fadeIn();
         tagOverlay.animate({'left': '100%'});
         $('.tags-overlay-wrapper').empty();
       );

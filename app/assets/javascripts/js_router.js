@@ -17,7 +17,6 @@ UTIL = {
           Page.init();
         }
       } else if (typeof ns[controller][action] == "function") {
-        debugger;
         ns[controller][action]();
       }
     }

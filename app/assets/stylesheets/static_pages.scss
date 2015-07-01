@@ -15,11 +15,18 @@ body {
 .search-group {
   width: 32.6%;
 }
+.search-submit {
+  background-color: #CCC;
+  border-color: #CCC;
+  &:hover {
+   background-color: #BCBCBC; 
+  }
+}
 .featured-tags header {
   margin-top: 50px;
 }
 
-.featured-tag {
+.featured-tag, .new-post-btn {
   border: 1px solid #CCC;
   padding: 8px 12px;
   color: black;
@@ -31,12 +38,27 @@ body {
   }
 }
 
+.new-btn-wrapper {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.new-post-btn {
+  font-size: 14px;
+  padding: 10px 23px;
+  background-color: white;
+  color: #008CBA;
+  &:hover {
+    background-color: white;
+  }
+}
+
 //Write new post styling
 #write-post {
   color: #999;
+  margin-top: 20px;
 }
 .new-tag-wrapper {
-  display: none;
+  margin-left: 7px;
 }
 .fa-tags {
   color: #999;

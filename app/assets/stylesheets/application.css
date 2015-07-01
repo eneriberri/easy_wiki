@@ -23,3 +23,9 @@
 .first {
   margin-top: 70px;
 }
+.hidden {
+  display: none;
+}
+.opaque {
+  opacity: 0;
+}

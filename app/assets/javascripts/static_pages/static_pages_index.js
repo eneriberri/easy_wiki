@@ -3,6 +3,7 @@ $(document).ready(function() {
   EASY_WIKI.static_pages.index = {
 
     init: function() {
+      //Handle search bar functionality
       submitSearch = function() {
         window.location.href = '/tagged?tag=' + $('#search-box').val();
       }
@@ -11,7 +12,6 @@ $(document).ready(function() {
           submitSearch();
         }
       });
-
       $('.search-submit').on('click', submitSearch);
 
       //Create editor and animate its functionality
@@ -19,12 +19,10 @@ $(document).ready(function() {
       $writePost = $('#write-post');
 
       $writePost.one('click', function(e) {
-        $writePost.animate({'height': '130px'}, function() {
-          var newTags = '<span class="new-tag-wrapper">'+
-                        '<i class="fa fa-tags"></i><input type="text" class="new-tags" placeholder="Enter tags here">'+
-                        '</span>';
-          $writePost.after(newTags);
-          $('.new-tag-wrapper').fadeIn();
+        $writePost.animate({'height': '180px'}, function() {
+          $('.new-tag-wrapper').animate({'opacity': '1'});
+          $('.new-btn-wrapper').animate({'opacity': '1'});
+          
         });
       });
     },

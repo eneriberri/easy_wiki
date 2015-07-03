@@ -2,6 +2,47 @@ $(document).ready(function() {
 
   EASY_WIKI.static_pages.index = {
 
+    /*
+     * publish a post and redirect to the created post
+     *
+     * called when the 'publish' button is clicked on
+     * the home page
+     */
+    publish: function() {
+      $.ajax({
+        type: 'POST',
+        url: 'api/posts/publish',
+        data: {
+          title: "Untitled Article",
+          body: $('#write-post').html(),
+          tags: $('.new-tags').val(),
+        },
+        success: function(post) {
+          if (post && post.id) {
+            window.location.href = "/posts/" + post.id;
+          }
+        }
+      });
+    },
+
+    /* save the form values to localstorage and
+     * open the 'new post' page
+     *
+     * called when the 'go fullscreen' button is clicked
+     * on the home page
+     */
+    fullscreen: function() {
+      var postBody = $('#write-post').html() !== "Start a new article..." ? $('#write-post').html() : null;
+      var tags = $('.new-tags').val();
+      if (postBody) {
+        sessionStorage.setItem("temp_post_body", postBody);
+      }
+      if (tags) {
+        sessionStorage.setItem("temp_post_tags", tags);
+      }
+      window.location.href = "/posts/new";
+    },
+
     init: function() {
 
       //Handle search bar functionality

@@ -42,12 +42,14 @@
         <%= "Over an hour ago" %>
         <% when 3600*2...(3600*24-1) %>
         <%= (@time/3600).to_s + " hours ago" %>
-        <% when 3600*24...(3600*24*365-1) %>
-        <%= (@time/3600*24).to_s + " days ago" %>
+        <% when 3600*24...(3600*24*2-1) %>
+        <%= "Over a day ago" %>
+        <% when 3600*24*2...(3600*24*365-1) %>
+        <%= (@time/(3600*24)).to_s + " days ago" %>
         <% when 3600*24*365...3600*24*365*2 %>
         <%= "Over a year ago" %>
         <% else %>
-        <%= "Over" + (@time/3600*24*365) + " years ago" %>
+        <%= "Over" + (@time/(3600*24*365)).to_s + " years ago" %>
         <% end %>
       </div>
   	  <br />

@@ -65,6 +65,18 @@ class PostsController < ApplicationController
     render :index
   end
 
+  # create a post from the provided title, body, tags.
+  # returns the post in json format
+  def publish
+    @post = Post.new
+    @post.title = params.require(:title)
+    @post.body = params.require(:body)
+    @post.tag_list = params.require(:tags)
+    @post.save
+    render :json => @post
+  end
+
+
   private
 
   def post_params

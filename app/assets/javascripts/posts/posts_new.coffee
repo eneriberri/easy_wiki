@@ -6,6 +6,15 @@ $ ->
     # called when the posts new page loads
     # initializes page variables
     init: ->
+      # if we have a temp post from session storage, use that
+      if body = sessionStorage.getItem("temp_post_body")
+        $('#post_body').text(body)
+        sessionStorage.removeItem("temp_post_body")
+
+      if tags = sessionStorage.getItem("temp_post_tags")
+        $('.new-tags').val(tags)
+        sessionStorage.removeItem("temp_post_tags")
+
       # the placeholder text for the post body editor
       @placeholderText = "<span style='color:rgb(204, 204, 204);'>Write here...</span>";
       if $('#post_body').text()
